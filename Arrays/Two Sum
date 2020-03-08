@@ -1,0 +1,41 @@
+//https://leetcode.com/problems/two-sum/
+
+/**
+ * @param {number[]} nums
+ * @param {number} target
+ * @return {number[]}
+ */
+
+//a + b = target
+//return index of two
+//X Twice
+
+//Naive
+/*var twoSum = function(nums, target) {
+    for(let i=0;i<nums.length;i++){
+        for(let j=1;j<nums.length;j++){
+            if(nums[i] + nums[j] === target)
+                return [i,j]
+        }
+    }
+    
+    return undefined;
+};*/
+
+//Hash
+var twoSum = function(nums, target) {
+    const map = {}
+    
+    for(let i=0;i<nums.length;i++){
+        //Compare value and return index if condition meets
+        if(map !== undefined && map[target - nums[i]] !== undefined)
+        {
+            return [i, map[target - nums[i]]];
+        }
+        
+        //Store each array to hash
+        map[nums[i]] = i
+    }
+    
+    return undefined
+};

@@ -1,0 +1,48 @@
+//Given an array = [2,5,1,2,3,5]
+//Return 2
+
+//Given an array = [2,1,1,2,3]
+//Return 1
+
+//Given an array = [2,3,4,5]
+//Return undefined
+
+//Naive solution
+//Time Complexity: O(n^2)
+const FirstRecurringChar = (array) => {
+  //Loop throuh array outer array to increment index by 1 and inner array to decrement index by 1
+  for (let i=1;i<array.length;i++)
+  {
+    for (let j=i-1;j>=0;j--)
+    {
+      if (array[i] === array[j])
+        return array[i]
+    }
+  }
+  return undefined
+}
+
+FirstRecurringChar([2,3,4,5])
+
+//Solution
+//Time Complexity: O(n)
+const FirstRecurringChar1 = (array) => {
+  const map = {}
+
+  //Find
+  for (let i=0;i<array.length;i++)
+  {
+    if(map[array[i]] !== undefined)
+    {
+      return array[i]
+    }
+
+    map[array[i]] = i
+  }
+
+  return undefined
+}
+
+FirstRecurringChar1([2,5,1,2,3,5])
+
+
