@@ -1,0 +1,27 @@
+function mergeSortedArrays(array1, array2) {
+  let i=0;
+  let j=0;
+  const sortedArrays = []
+  array1Item = array1[0];
+  array2Item = array2[0];
+
+  if (array1.length === 0 || array2.length === 0)
+    return 'Fail'
+
+  while (array1Item || array2Item)
+  {
+    if (!array2Item || array1Item < array2Item)
+    {
+      sortedArrays.push(array1Item)
+      array1Item = array1[++i];
+    } else {
+      sortedArrays.push(array2Item)
+      array2Item = array2[++j];
+    }
+  }
+
+  return sortedArrays
+};
+
+mergeSortedArrays([0,3,4,31], [4,6,30]);
+
