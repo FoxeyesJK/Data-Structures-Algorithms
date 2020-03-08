@@ -11,4 +11,15 @@ function reverse(str) {
     return backwards.join('');
 }
 
+function reverse2(str) {
+  return str.split('').reverse().join('')
+}
+
+//ES6
+const reverse3 = str => str.split('').reverse().join('');
+const reverse4 = str => [...str].reverse().join('');
+
 reverse('Try reversing strings!')
+reverse2('Try reversing strings!')
+reverse3('Try reversing strings!')
+reverse4('Try reversing strings!')
