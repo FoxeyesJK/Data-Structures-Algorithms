@@ -1,1 +1,14 @@
-/
+
+function reverse(str) { 
+  if (!str || str.length < 2 || typeof str !== 'string')
+    return 'Fail'
+
+
+  const reverse = [];
+  for (let i = str.length - 1; i==) 
+    reverse.push(str[i])
+
+    return backwards.join('');
+}
+
+reverse('Try reversing strings!')
