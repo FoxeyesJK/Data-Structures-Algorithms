@@ -8,7 +8,6 @@
 
 //a + b = target
 //return index of two
-//X Twice
 
 //Naive
 /*var twoSum = function(nums, target) {
