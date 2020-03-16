@@ -1,0 +1,20 @@
+//169. Majority Element
+//[Time Complexity: O(n)]
+var majorityElement = function(nums) {
+    if (nums.length === 1)
+      return nums[0]
+    
+    const map = {}
+
+    for(let i=0;i<nums.length;i++) {
+      if (map[nums[i]] === undefined)
+        map[nums[i]] = 1
+      else {
+        map[nums[i]]++
+        if (map[nums[i]] >= (Math.round(nums.length/2)))
+          return nums[i]
+      }
+    }
+
+    return undefined
+};
