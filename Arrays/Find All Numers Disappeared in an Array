@@ -1,0 +1,23 @@
+//Naive[Time Complexity: O(n^2)]
+var findDisappearedNumbers = function(nums) {
+
+const array = []
+  //find highest
+  const max = Math.max.apply(null, nums)
+
+  //assing array
+  for(let i=0;i<nums.length;i++) {
+    array[i] = i+1
+  }
+
+  for(let j=0;j<nums.length;j++) {
+    let index = array.indexOf(nums[j])
+    if (index !== -1)
+      array.splice(index,1)
+  }
+  
+  return array
+};
+
+findDisappearedNumbers([4,3,2,7,8,2,3,1])
+//findDisappearedNumbers([1,1])
