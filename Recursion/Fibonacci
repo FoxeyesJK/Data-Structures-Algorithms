@@ -1,0 +1,21 @@
+//[Time Complexity:O(n)]
+function findFactorialRecursive(num) {
+  if(num === 1)
+    return num
+
+  return num * findFactorialRecursive(num-1)
+}
+
+findFactorialRecursive(3)
+
+//[Time Complexity:O(n)]
+function findFactorialIterative(num) {
+  let result = 1
+  for(let i=num;i>0;i--) {
+    result *= i
+  }
+
+  return result
+}
+
+findFactorialIterative(3)

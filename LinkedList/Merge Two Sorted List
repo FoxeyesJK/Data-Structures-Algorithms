@@ -1,0 +1,32 @@
+//[TimeComplexity: O(n)]
+var mergeTwoLists = function(l1, l2) {
+    let list = null;
+    let head = list;
+    
+    if (l1 === null)
+        return l2
+    
+    if (l2 === null)
+        return l1
+
+    while(l1 || l2) {
+       if(l1 === null || (l2 !== null && l1.val > l2.val)) {
+          insertNode(l2,list, head)
+       } else {
+          insertNode(l1,list, head)
+       }
+    }
+    return head   
+};
+
+var insertNode = function(l, list, head) {
+  if (list === null) {
+      list = new ListNode(l.val)
+      head = list
+  }
+  else {
+      list.next = new ListNode(l.val)
+      list = list.next
+  }
+  l = l.next;
+}
