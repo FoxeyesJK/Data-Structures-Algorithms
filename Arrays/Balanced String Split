@@ -1,0 +1,22 @@
+var balancedStringSplit = function(s) {
+  const array = []
+  
+  let isSameValue = false;
+  let count = 0;
+  
+    for(let i=0;i<s.length;i++) {
+      if(array.length === 0)
+        array.push(s[i])
+      else {
+        if(array[array.length-1] !== s[i]) {
+          array.pop()
+          if(array.length === 0)
+            count++;
+        }
+        else
+          array.push(s[i])
+      }
+    }
+  
+  return count
+};
