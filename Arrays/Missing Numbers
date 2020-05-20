@@ -1,0 +1,50 @@
+//https://leetcode.com/problems/missing-number/
+
+//Naive
+//TC: O(n^2)
+var missingNumber = function(nums) {
+    let toggle = false
+    for(let i=0;i<=nums.length;i++) {
+      for(let j=0;j<nums.length;j++) {
+        if(nums[j] === i) {
+          toggle = true
+          console.log(i)
+        }
+      }
+        if(toggle === false)      
+          return i
+      toggle = false
+    }
+
+    return false
+};
+
+//Hash
+//TC: O(n)
+var missingNumber = function(nums) {
+  const map = {}
+  
+  //Assign values in Hash
+  for(let i=0;i<nums.length;i++)
+    map[nums[i]] = i
+
+  //Search from Hash
+  for(let j=0;j<=nums.length;j++) {
+    if(!map[j] && map[j] !== 0) {
+      return j
+    }
+  }
+  return false
+};
+
+//Best
+//TC: O(n)
+var missingNumber = function(nums) {
+   let sum = 0, total = 0
+   for (let i=0;i<nums.length;i++) {
+     sum += nums[i]
+     total += i + 1
+   }
+
+   return total - sum
+};

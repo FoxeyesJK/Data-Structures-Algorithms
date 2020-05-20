@@ -1,0 +1,39 @@
+
+https://leetcode.com/problems/happy-number/submissions/
+
+//Naive
+//TC: O(n^2)
+var isHappy = function(n) {
+    let total = 0;
+    let count = 0;
+
+    while (total != 1) {
+      total = 0;
+      let array = n.toString() 
+      
+      for(let a of array)
+        total += Math.pow(parseInt(a),2)
+      
+      n = total
+      count++
+      if (count > 1000)
+        return false
+    }
+
+    return true
+};
+
+//ES6 & Recursion
+//TC: O(n^2)
+var isHappy = function(n) {
+    if(n === 1)
+      return true
+    else if(n === 4)
+      return false
+    else
+    {
+      const newNum = n.toString().split('').reduce((a, v) => { return a + Math.pow(v,2) },0)
+      return isHappy(newNum) 
+    }
+};
+};

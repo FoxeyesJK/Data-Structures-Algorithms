@@ -1,0 +1,26 @@
+
+//https://leetcode.com/problems/jewels-and-stones/submissions
+
+//Naive
+//TC: O(n^2)
+var numJewelsInStones = function(J, S) {
+  let count = 0
+
+  if (J.Length > 50 || S.Length > 50)
+    return 0
+
+  for (let i of J) {
+    for (let j of S) {
+      if (i === j)
+        count++
+    }
+  }
+
+  return count
+};
+
+//es6
+//TC: O(n^2)
+var numJewelsInStones = function(J, S) {
+    return S.split('').filter(s => J.includes(s)).length
+};
