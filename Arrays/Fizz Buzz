@@ -1,0 +1,40 @@
+
+//https://leetcode.com/problems/fizz-buzz/
+//TC: O(n)
+var fizzBuzz = function(n) {
+    let array = []
+
+    if (n === 0)
+      return array
+      
+    for(let i=1;i<=n;i++) {
+      if (!(i%3) && !(i%5))
+        array.push('FizzBuzz')
+      else if (!(i%3))
+        array.push('Fizz')
+      else if (!(i%5))
+        array.push('Buzz')
+      else
+        array.push(i.toString())
+    }
+
+    return array
+};
+
+//Recursion
+const array = []
+var fizzBuzz = function(n) {
+    if (!n)
+      return array
+
+    if (!(n%3) && !(n%5))
+      array.push('FizzBuzz')
+    else if (!(n%3))
+      array.push('Fizz')
+    else if (!(n%5))
+      array.push('Buzz')
+    else
+      array.push(n.toString())
+    
+    return fizzBuzz(n-1)
+};

@@ -1,0 +1,23 @@
+//https://leetcode.com/problems/intersection-of-two-arrays-ii/
+
+//TC: O(n^3)
+var intersect = function(nums1, nums2) {
+    let array = []
+
+    if (!nums1.length || !nums2.length)
+      return array
+
+    for(let i=0;i<nums1.length;i++) {
+      for(let j=0;j<nums2.length;j++) {
+        if(nums1[i] === nums2[j]) {
+          array.push(nums2[j])
+          nums2.splice(j,1)
+          break;
+        }
+      }
+    }
+    return array
+};
+
+intersect([1,2,2,1], [2,2])
+intersect([4,9,5], [9,4,9,8,4])
