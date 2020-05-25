@@ -1,0 +1,19 @@
+
+//https://leetcode.com/problems/power-of-three/submissions/
+
+
+var isPowerOfThree = function(n) {
+  if (n === 1)
+    return true
+
+  return !(n%3) ? isPowerOfThree(n/3) : false
+};
+
+
+var isPowerOfThree = function(n) {
+    return ( Math.log(n) / Math.log(3) ) % 1 < 0.00000000000001;
+};
+
+//To know if it is integer %1
+
+
